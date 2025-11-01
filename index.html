@@ -283,9 +283,14 @@
                                 <span class="text-sm text-slate-600">4.7 (320)</span>
                             </div>
                         </div>
-                        <button onclick="addToCart('Classic Cheeseburger', 12.99, 'images/cheeseburger.jpg')"
-                            class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">Add
-                            to Cart</button>
+                        <div class="flex space-x-2">
+                            <button onclick="addToCart('Classic Cheeseburger', 12.99, 'images/cheeseburger.jpg')"
+                                class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">Add
+                                to Cart</button>
+                            <button onclick="openModal('aiFitGuideModal')"
+                                class="w-full bg-gray-200 text-gray-800 py-3 rounded-full font-semibold hover:bg-gray-300 transition">AI
+                                Fit Guide</button>
+                        </div>
                     </div>
                 </div>
 
@@ -313,9 +318,14 @@
                                 <span class="text-sm text-slate-600">4.9 (512)</span>
                             </div>
                         </div>
-                        <button onclick="addToCart('Margherita Pizza', 15.50, 'images/pizza.jpg')"
-                            class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">Add
-                            to Cart</button>
+                        <div class="flex space-x-2">
+                            <button onclick="addToCart('Margherita Pizza', 15.50, 'images/pizza.jpg')"
+                                class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">Add
+                                to Cart</button>
+                            <button onclick="openModal('aiFitGuideModal')"
+                                class="w-full bg-gray-200 text-gray-800 py-3 rounded-full font-semibold hover:bg-gray-300 transition">AI
+                                Fit Guide</button>
+                        </div>
                     </div>
                 </div>
 
@@ -341,9 +351,14 @@
                                 <span class="text-sm text-slate-600">4.8 (250)</span>
                             </div>
                         </div>
-                        <button onclick="addToCart('Hot Butter Cuttlefish', 18.50, 'images/hot_butter_cuttlefish.jpg')"
-                            class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">Add
-                            to Cart</button>
+                        <div class="flex space-x-2">
+                            <button onclick="addToCart('Hot Butter Cuttlefish', 18.50, 'images/hot_butter_cuttlefish.jpg')"
+                                class="w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">Add
+                                to Cart</button>
+                            <button onclick="openModal('aiFitGuideModal')"
+                                class="w-full bg-gray-200 text-gray-800 py-3 rounded-full font-semibold hover:bg-gray-300 transition">AI
+                                Fit Guide</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -953,7 +968,29 @@
         </div>
     </div>
 
+    <!-- AI Fit Guide Modal -->
+    <div id="aiFitGuideModal"
+        class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-xl p-8 max-w-lg w-full">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-slate-900">AI Fit Guide</h3>
+                <button onclick="closeModal('aiFitGuideModal')" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div>
+                <p class="text-slate-600">This is a placeholder for the AI Fit Guide. This feature will provide personalized recommendations based on your preferences.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
         let cart = [];
         let confirmedOrder = [];
 
